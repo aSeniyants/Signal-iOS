@@ -171,7 +171,7 @@ class MainAppContext: NSObject, AppContext {
     }
 
     func appSharedDataDirectoryPath() -> String {
-        FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: TSConstants.applicationGroup)!.path
+        FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: TSConstants.applicationGroup)?.path ?? NSTemporaryDirectory()
     }
 
     func appDatabaseBaseDirectoryPath() -> String { appSharedDataDirectoryPath() }
